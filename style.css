@@ -11,8 +11,8 @@
   --black-soft:  #3C2A18;
   --gray:        #7B6A52;
   --gray-light:  #D2C09E;
-  --gold:        #C49316;
-  --gold-dark:   #A37A0E;
+  --gold:        #c9a96e;
+  --gold-dark:   #b8935a;
   --overlay:     rgba(18, 10, 4, 0.65);
 
   --font-serif:  'Playfair Display', Georgia, serif;
@@ -35,7 +35,7 @@
   --text-muted:  var(--gray);
   --border:      var(--gray-light);
   --card-bg:     var(--white);
-  --gold-light:  rgba(196, 147, 22, 0.10);
+  --gold-light:  rgba(201, 169, 110, 0.10);
   --section-pad: 112px;
 }
 
@@ -139,7 +139,7 @@ h1, h2, h3, h4 {
   background: var(--gold-dark);
   border-color: var(--gold-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(196, 147, 22, 0.35);
+  box-shadow: 0 8px 24px rgba(201, 169, 110,0.35);
 }
 
 .btn-ghost {
@@ -484,7 +484,7 @@ html.dark .icon-sun { display: none; }
 .service-card:hover {
   border-top-color: var(--gold);
   transform: translateY(-6px);
-  box-shadow: var(--shadow-md), 0 0 0 1px rgba(196, 147, 22, 0.08);
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(201, 169, 110,0.08);
 }
 
 .service-icon {
@@ -501,11 +501,11 @@ html.dark .icon-sun { display: none; }
 }
 
 html.dark .service-icon {
-  background: rgba(196, 147, 22, 0.12);
+  background: rgba(201, 169, 110,0.12);
 }
 
 .service-card:hover .service-icon {
-  background: rgba(196, 147, 22, 0.18);
+  background: rgba(201, 169, 110,0.18);
 }
 
 .service-card h3 {
@@ -611,6 +611,12 @@ html.dark .service-icon {
 
 .portfolio-card:hover .portfolio-overlay {
   opacity: 1;
+}
+
+@media (hover: none) {
+  .portfolio-overlay {
+    opacity: 1;
+  }
 }
 
 .portfolio-overlay h3 {
@@ -905,7 +911,7 @@ html.dark .stats-section {
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(196, 147, 22, 0.15);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110,0.15);
 }
 
 .form-group input.error,
