@@ -1278,3 +1278,29 @@ html.dark .footer {
     padding: 28px 20px;
   }
 }
+
+/* ---------- Clap Toast ---------- */
+.clap-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(24px);
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 14px 28px;
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 9999;
+  white-space: nowrap;
+}
+.clap-toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

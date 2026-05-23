@@ -313,6 +313,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
         notification.className = 'form-notification success';
         form.reset();
         Object.values(fields).forEach(f => clearError(f));
+        showClapAlert();
       } else {
         throw new Error('Server error');
       }
@@ -325,4 +326,16 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
       notification.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   });
+
+  function showClapAlert() {
+    const toast = document.createElement('div');
+    toast.className = 'clap-toast';
+    toast.innerHTML = '👏 Your form has been submitted!';
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('clap-toast--visible'));
+    setTimeout(() => {
+      toast.classList.remove('clap-toast--visible');
+      toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+    }, 3500);
+  }
 })();

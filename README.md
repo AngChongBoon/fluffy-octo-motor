@@ -29,6 +29,7 @@ https://angchongboon.github.io/fluffy-octo-motor/
 
 **Contact Form**
 - Submits via `fetch` POST to FormSubmit (no backend required)
+- Shows a celebratory clap toast on successful submission
 
 **Scroll Animations**
 - `.fade-in` elements revealed by `IntersectionObserver` at 0.12 threshold
