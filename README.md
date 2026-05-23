@@ -1,6 +1,6 @@
-﻿# Luxe Interiors
+# Luxe Interiors
 
-A fully static luxury interior design website for Kuala Lumpur. Built without a build step — three files, deployed on GitHub Pages and ready to customise.
+A fully static **Thai luxury interior design** website for Kuala Lumpur. Built without a build step — three files, deployed on GitHub Pages and ready to customise. Features a **saffron-gold Thai palette**, dark mode, portfolio filter, testimonial carousel, and a FormSubmit contact form.
 
 ![Luxe Interiors](screenshot.png)
 

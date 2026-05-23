@@ -302,7 +302,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
     };
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/ang.chongboon@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/ang.chongboon@yahoo.com.sg', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body:    JSON.stringify(payload),
