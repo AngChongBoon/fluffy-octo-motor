@@ -328,14 +328,36 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
   });
 
   function showClapAlert() {
-    const toast = document.createElement('div');
-    toast.className = 'clap-toast';
-    toast.innerHTML = '👏 Your form has been submitted!';
-    document.body.appendChild(toast);
-    requestAnimationFrame(() => toast.classList.add('clap-toast--visible'));
-    setTimeout(() => {
-      toast.classList.remove('clap-toast--visible');
-      toast.addEventListener('transitionend', () => toast.remove(), { once: true });
-    }, 3500);
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+
+      function clap(time) {
+        const bufSize = Math.floor(ctx.sampleRate * 0.12);
+        const buf = ctx.createBuffer(1, bufSize, ctx.sampleRate);
+        const data = buf.getChannelData(0);
+        for (let i = 0; i < bufSize; i++) data[i] = Math.random() * 2 - 1;
+
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = 1100;
+        filter.Q.value = 0.8;
+
+        const gain = ctx.createGain();
+        gain.gain.setValueAtTime(0.8, time);
+        gain.gain.exponentialRampToValueAtTime(0.001, time + 0.09);
+
+        src.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+        src.start(time);
+      }
+
+      clap(ctx.currentTime);
+      clap(ctx.currentTime + 0.28);
+      clap(ctx.currentTime + 0.56);
+    } catch (e) { /* AudioContext unavailable */ }
   }
 })();
